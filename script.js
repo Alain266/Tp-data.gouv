@@ -70,7 +70,6 @@ function run(cities) {
     });
 
     addDataRegion(regions);
-    addDataDepartement(regions);
 }
 
 /**
@@ -78,6 +77,7 @@ function run(cities) {
  */
 function addDataRegion(regions) {
     const region = document.getElementById("region");
+    const villes = document.getElementById("villes");
     const regionValues = Object.values(regions);
 
     // Triez le tableau des valeurs par ordre alphabétique
@@ -91,14 +91,14 @@ function addDataRegion(regions) {
         return 0; // Les noms sont égaux
     });
 
-    regionValues.forEach(function(region) { // Boucle sur le tableau les valeurs des regions
+    regionValues.forEach(function(region) { // Boucle sur le tableau des valeurs des regions
         document.getElementById("region").innerHTML += `<option>${region.name.toUpperCase()}</option>`;
 
-        region.departments.forEach(function(department) { // Boucle sur le tableau les valeurs des departements
+        region.departments.forEach(function(department) { // Boucle de niveau 2 sur le tableau des valeurs des departements
             document.getElementById("departement").innerHTML += `<option>${department.name.toUpperCase()}</option>`;
 
-                region.departments.cities.forEach(function(cities) { // Boucle sur le tableau les valeurs des villes
-                    document.getElementById("villes").innerHTML += `<ul>${cities.name.toUpperCase()}</ul>`;
+                departments.cities.forEach(function(cities) { // Boucle de niveau 3 sur le tableau des valeurs des villes
+                    villes.innerHTML += `<ul>${cities.name.toUpperCase()}</ul>`;
             })
         })
     });
