@@ -20,6 +20,7 @@ main{
 }
 
 #selectForm{
+    text-align: center;
     padding: 50px;
     border-radius: 25px;
     background-color:rgba(0, 0, 0, 0.2);

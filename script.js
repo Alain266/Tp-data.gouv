@@ -97,9 +97,11 @@ function addDataRegion(regions) {
         region.departments.forEach(function(department) { // Boucle de niveau 2 sur le tableau des valeurs des departements
             document.getElementById("departement").innerHTML += `<option>${department.name.toUpperCase()}</option>`;
 
-                departments.cities.forEach(function(cities) { // Boucle de niveau 3 sur le tableau des valeurs des villes
-                    villes.innerHTML += `<ul>${cities.name.toUpperCase()}</ul>`;
-            })
+            console.log("OK");
+
+            // department.cities.forEach(function(city) { // Boucle de niveau 3 sur le tableau des valeurs des villes
+            //         villes.innerHTML += `<ul>${city.name.toUpperCase()}</ul>`;
+            // })
         })
     });
 }
